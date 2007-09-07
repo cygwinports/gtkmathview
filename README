@@ -1,0 +1,279 @@
+gtkmathview
+------------------------------------------
+GtkMathView is a C++ rendering engine for MathML documents. It provides 
+an interactive view that can be used for browsing and editing MathML 
+markup.
+
+GtkMathView reads MathML documents by means of a frontend whose purpose 
+is to traverse the MathML document (or part of it) and to appropriately 
+instantiate GtkMathView's internal data structures that are suitable for 
+rendering it.
+
+GtkMathView renders MathML documents through a backend whose purpose is 
+to provide an abstraction of the platform-specific capabilities 
+(available fonts, drawing drawing primitives, and so on).
+
+Runtime requirements:
+  cygwin-1.5.24-2
+  font-texcm-ttf-20030828-1
+  gdome2-0.8.1-2
+  glib2-2.12.13-1
+  gmetadom-0.2.5-1
+  gtk2-x11-2.10.14-1
+  libpopt0-1.10.4-1
+  libxml2-2.6.29-1
+  pango-1.16.5-1
+  t1lib-5.1.1-1
+  t1lib-x11-5.1.1-1
+
+Build requirements:
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.10-1.10-1
+  binutils-20060817-1
+  cygport-0.3.5-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  libtool1.5-1.5.23a-2
+  make-3.81-1
+  pkg-config-0.21-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://helm.cs.unibo.it/mml-widget/
+
+Canonical download:
+  http://svn.gnome.org/viewcvs/gtkmathview/trunk/
+
+-------------------------------------------
+
+Build instructions:
+  unpack gtkmathview-0.7.8.1167-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./gtkmathview-0.7.8.1167-X.cygport all
+
+This will create:
+  /usr/src/gtkmathview-0.7.8.1167-X-src.tar.bz2
+  /usr/src/gtkmathview-0.7.8.1167-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(gtkmathview)
+  /etc/gtkmathview/gtkmathview.conf.xml
+  /usr/bin/cyggtkmathview_custom_reader-0.dll
+  /usr/bin/cyggtkmathview_gmetadom-0.dll
+  /usr/bin/cyggtkmathview_libxml2-0.dll
+  /usr/bin/cyggtkmathview_libxml2_reader-0.dll
+  /usr/bin/cygmathview-0.dll
+  /usr/bin/cygmathview_backend_gtk-0.dll
+  /usr/bin/cygmathview_backend_ps-0.dll
+  /usr/bin/cygmathview_backend_svg-0.dll
+  /usr/bin/cygmathview_frontend_custom_reader-0.dll
+  /usr/bin/cygmathview_frontend_gmetadom-0.dll
+  /usr/bin/cygmathview_frontend_libxml2-0.dll
+  /usr/bin/cygmathview_frontend_libxml2_reader-0.dll
+  /usr/bin/mathmlps.exe
+  /usr/bin/mathmlsvg.exe
+  /usr/bin/mathmlviewer.exe
+  /usr/share/doc/Cygwin/gtkmathview-0.7.8.1167.README
+  /usr/share/doc/gtkmathview-0.7.8.1167/AUTHORS
+  /usr/share/doc/gtkmathview-0.7.8.1167/BUGS
+  /usr/share/doc/gtkmathview-0.7.8.1167/CONTRIBUTORS
+  /usr/share/doc/gtkmathview-0.7.8.1167/COPYING
+  /usr/share/doc/gtkmathview-0.7.8.1167/ChangeLog
+  /usr/share/doc/gtkmathview-0.7.8.1167/HISTORY
+  /usr/share/doc/gtkmathview-0.7.8.1167/INSTALL
+  /usr/share/doc/gtkmathview-0.7.8.1167/LICENSE
+  /usr/share/doc/gtkmathview-0.7.8.1167/MAINTAINERS
+  /usr/share/doc/gtkmathview-0.7.8.1167/NEWS
+  /usr/share/doc/gtkmathview-0.7.8.1167/README
+  /usr/share/doc/gtkmathview-0.7.8.1167/TODO
+  /usr/share/gtkmathview/dictionary-combining.xml
+  /usr/share/gtkmathview/dictionary-local.xml
+  /usr/share/gtkmathview/dictionary.dtd
+  /usr/share/gtkmathview/dictionary.xml
+  /usr/share/gtkmathview/entities-table.dtd
+  /usr/share/gtkmathview/entities-table.xml
+  /usr/share/gtkmathview/gtkmathview.conf.dtd
+  /usr/share/gtkmathview/mathml-entities.dtd
+  /usr/share/man/man1/mathmlviewer.1.gz
+
+(gtkmathview-devel)
+  /usr/include/gtkmathview/MathView/AbstractLogger.hh
+  /usr/include/gtkmathview/MathView/Area.hh
+  /usr/include/gtkmathview/MathView/AreaFactory.hh
+  /usr/include/gtkmathview/MathView/AreaId.hh
+  /usr/include/gtkmathview/MathView/AreaIdAux.hh
+  /usr/include/gtkmathview/MathView/Backend.hh
+  /usr/include/gtkmathview/MathView/BinContainerArea.hh
+  /usr/include/gtkmathview/MathView/BoundingBox.hh
+  /usr/include/gtkmathview/MathView/BoundingBoxAux.hh
+  /usr/include/gtkmathview/MathView/BoxArea.hh
+  /usr/include/gtkmathview/MathView/BoxGraphicDevice.hh
+  /usr/include/gtkmathview/MathView/BoxMLElement.hh
+  /usr/include/gtkmathview/MathView/BoxMLNamespaceContext.hh
+  /usr/include/gtkmathview/MathView/BoxedLayoutArea.hh
+  /usr/include/gtkmathview/MathView/CachedShapedString.hh
+  /usr/include/gtkmathview/MathView/Char.hh
+  /usr/include/gtkmathview/MathView/ColorArea.hh
+  /usr/include/gtkmathview/MathView/CombinedGlyphArea.hh
+  /usr/include/gtkmathview/MathView/ComputerModernFamily.hh
+  /usr/include/gtkmathview/MathView/ComputerModernShaper.hh
+  /usr/include/gtkmathview/MathView/Configuration.hh
+  /usr/include/gtkmathview/MathView/ContainerArea.hh
+  /usr/include/gtkmathview/MathView/Element.hh
+  /usr/include/gtkmathview/MathView/FastScopedHashMap.hh
+  /usr/include/gtkmathview/MathView/FillerArea.hh
+  /usr/include/gtkmathview/MathView/FormattingContext.hh
+  /usr/include/gtkmathview/MathView/GlyphArea.hh
+  /usr/include/gtkmathview/MathView/GlyphSpec.hh
+  /usr/include/gtkmathview/MathView/GlyphStringArea.hh
+  /usr/include/gtkmathview/MathView/GlyphWrapperArea.hh
+  /usr/include/gtkmathview/MathView/GraphicDevice.hh
+  /usr/include/gtkmathview/MathView/Gtk_Backend.hh
+  /usr/include/gtkmathview/MathView/HashMap.hh
+  /usr/include/gtkmathview/MathView/HideArea.hh
+  /usr/include/gtkmathview/MathView/HorizontalArrayArea.hh
+  /usr/include/gtkmathview/MathView/HorizontalFillerArea.hh
+  /usr/include/gtkmathview/MathView/HorizontalSpaceArea.hh
+  /usr/include/gtkmathview/MathView/IdArea.hh
+  /usr/include/gtkmathview/MathView/IgnoreArea.hh
+  /usr/include/gtkmathview/MathView/Init.hh
+  /usr/include/gtkmathview/MathView/InkArea.hh
+  /usr/include/gtkmathview/MathView/Length.hh
+  /usr/include/gtkmathview/MathView/LengthAux.hh
+  /usr/include/gtkmathview/MathView/LinearContainerArea.hh
+  /usr/include/gtkmathview/MathView/Logger.hh
+  /usr/include/gtkmathview/MathView/MathGraphicDevice.hh
+  /usr/include/gtkmathview/MathView/MathMLElement.hh
+  /usr/include/gtkmathview/MathView/MathMLNamespaceContext.hh
+  /usr/include/gtkmathview/MathView/MathMLOperatorDictionary.hh
+  /usr/include/gtkmathview/MathView/MathVariant.hh
+  /usr/include/gtkmathview/MathView/MathVariantMap.hh
+  /usr/include/gtkmathview/MathView/NamespaceContext.hh
+  /usr/include/gtkmathview/MathView/Node.hh
+  /usr/include/gtkmathview/MathView/NullShaper.hh
+  /usr/include/gtkmathview/MathView/Object.hh
+  /usr/include/gtkmathview/MathView/OverlapArrayArea.hh
+  /usr/include/gtkmathview/MathView/PS_Backend.hh
+  /usr/include/gtkmathview/MathView/PS_RenderingContext.hh
+  /usr/include/gtkmathview/MathView/PS_StreamRenderingContext.hh
+  /usr/include/gtkmathview/MathView/Point.hh
+  /usr/include/gtkmathview/MathView/PointAux.hh
+  /usr/include/gtkmathview/MathView/RGBColor.hh
+  /usr/include/gtkmathview/MathView/RGBColorAux.hh
+  /usr/include/gtkmathview/MathView/Rectangle.hh
+  /usr/include/gtkmathview/MathView/RenderingContext.hh
+  /usr/include/gtkmathview/MathView/SVG_Backend.hh
+  /usr/include/gtkmathview/MathView/SVG_RenderingContext.hh
+  /usr/include/gtkmathview/MathView/SVG_StreamRenderingContext.hh
+  /usr/include/gtkmathview/MathView/ScopedHashMap.hh
+  /usr/include/gtkmathview/MathView/SearchingContext.hh
+  /usr/include/gtkmathview/MathView/Shaper.hh
+  /usr/include/gtkmathview/MathView/ShaperManager.hh
+  /usr/include/gtkmathview/MathView/ShapingContext.hh
+  /usr/include/gtkmathview/MathView/ShiftArea.hh
+  /usr/include/gtkmathview/MathView/SimpleArea.hh
+  /usr/include/gtkmathview/MathView/SmartPtr.hh
+  /usr/include/gtkmathview/MathView/SpaceShaper.hh
+  /usr/include/gtkmathview/MathView/SparseMap.hh
+  /usr/include/gtkmathview/MathView/StandardSymbolsShaper.hh
+  /usr/include/gtkmathview/MathView/StepArea.hh
+  /usr/include/gtkmathview/MathView/String.hh
+  /usr/include/gtkmathview/MathView/StringAux.hh
+  /usr/include/gtkmathview/MathView/StringHash.hh
+  /usr/include/gtkmathview/MathView/T1Font.hh
+  /usr/include/gtkmathview/MathView/TFMComputerModernMathGraphicDevice.hh
+  /usr/include/gtkmathview/MathView/TFMComputerModernShaper.hh
+  /usr/include/gtkmathview/MathView/TFMFont.hh
+  /usr/include/gtkmathview/MathView/TFMFontManager.hh
+  /usr/include/gtkmathview/MathView/TFMGlyphArea.hh
+  /usr/include/gtkmathview/MathView/TemplateElementIterator.hh
+  /usr/include/gtkmathview/MathView/TemplateElementValidator.hh
+  /usr/include/gtkmathview/MathView/TemplateNodeIterator.hh
+  /usr/include/gtkmathview/MathView/Utils.hh
+  /usr/include/gtkmathview/MathView/Value.hh
+  /usr/include/gtkmathview/MathView/ValueConversion.hh
+  /usr/include/gtkmathview/MathView/Variant.hh
+  /usr/include/gtkmathview/MathView/VerticalArrayArea.hh
+  /usr/include/gtkmathview/MathView/VerticalFillerArea.hh
+  /usr/include/gtkmathview/MathView/VerticalSpaceArea.hh
+  /usr/include/gtkmathview/MathView/View.hh
+  /usr/include/gtkmathview/MathView/WeakPtr.hh
+  /usr/include/gtkmathview/MathView/WrapperArea.hh
+  /usr/include/gtkmathview/MathView/c_customXmlReader.h
+  /usr/include/gtkmathview/MathView/custom_reader_MathView.hh
+  /usr/include/gtkmathview/MathView/defs.h
+  /usr/include/gtkmathview/MathView/fixed.hh
+  /usr/include/gtkmathview/MathView/gmetadom_MathView.hh
+  /usr/include/gtkmathview/MathView/gmetadom_Model.hh
+  /usr/include/gtkmathview/MathView/gmv_defines.h
+  /usr/include/gtkmathview/MathView/libxml2_MathView.hh
+  /usr/include/gtkmathview/MathView/libxml2_Model.hh
+  /usr/include/gtkmathview/MathView/libxml2_reader_MathView.hh
+  /usr/include/gtkmathview/MathView/scaled.hh
+  /usr/include/gtkmathview/MathView/scaledAux.hh
+  /usr/include/gtkmathview/MathView/t1lib_T1Font.hh
+  /usr/include/gtkmathview/MathView/t1lib_T1FontManager.hh
+  /usr/include/gtkmathview/MathView/t1lib_TFM_T1Font.hh
+  /usr/include/gtkmathview/MathView/t1lib_TFM_T1FontManager.hh
+  /usr/include/gtkmathview/gtk/gtkmathview.h
+  /usr/include/gtkmathview/gtk/gtkmathview_common.h
+  /usr/include/gtkmathview/gtk/gtkmathview_custom_reader.h
+  /usr/include/gtkmathview/gtk/gtkmathview_decorators.h
+  /usr/include/gtkmathview/gtk/gtkmathview_decorators_common.h
+  /usr/include/gtkmathview/gtk/gtkmathview_gmetadom.h
+  /usr/include/gtkmathview/gtk/gtkmathview_libxml2.h
+  /usr/include/gtkmathview/gtk/gtkmathview_libxml2_reader.h
+  /usr/lib/libgtkmathview_custom_reader.dll.a
+  /usr/lib/libgtkmathview_custom_reader.la
+  /usr/lib/libgtkmathview_gmetadom.dll.a
+  /usr/lib/libgtkmathview_gmetadom.la
+  /usr/lib/libgtkmathview_libxml2.dll.a
+  /usr/lib/libgtkmathview_libxml2.la
+  /usr/lib/libgtkmathview_libxml2_reader.dll.a
+  /usr/lib/libgtkmathview_libxml2_reader.la
+  /usr/lib/libmathview.dll.a
+  /usr/lib/libmathview.la
+  /usr/lib/libmathview_backend_gtk.dll.a
+  /usr/lib/libmathview_backend_gtk.la
+  /usr/lib/libmathview_backend_ps.dll.a
+  /usr/lib/libmathview_backend_ps.la
+  /usr/lib/libmathview_backend_svg.dll.a
+  /usr/lib/libmathview_backend_svg.la
+  /usr/lib/libmathview_frontend_custom_reader.dll.a
+  /usr/lib/libmathview_frontend_custom_reader.la
+  /usr/lib/libmathview_frontend_gmetadom.dll.a
+  /usr/lib/libmathview_frontend_gmetadom.la
+  /usr/lib/libmathview_frontend_libxml2.dll.a
+  /usr/lib/libmathview_frontend_libxml2.la
+  /usr/lib/libmathview_frontend_libxml2_reader.dll.a
+  /usr/lib/libmathview_frontend_libxml2_reader.la
+  /usr/lib/pkgconfig/gtkmathview-custom-reader.pc
+  /usr/lib/pkgconfig/gtkmathview-gmetadom.pc
+  /usr/lib/pkgconfig/gtkmathview-libxml2-reader.pc
+  /usr/lib/pkgconfig/gtkmathview-libxml2.pc
+  /usr/lib/pkgconfig/mathview-backend-gtk.pc
+  /usr/lib/pkgconfig/mathview-backend-ps.pc
+  /usr/lib/pkgconfig/mathview-backend-svg.pc
+  /usr/lib/pkgconfig/mathview-core.pc
+  /usr/lib/pkgconfig/mathview-frontend-custom-reader.pc
+  /usr/lib/pkgconfig/mathview-frontend-gmetadom.pc
+  /usr/lib/pkgconfig/mathview-frontend-libxml2-reader.pc
+  /usr/lib/pkgconfig/mathview-frontend-libxml2.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.7.8.1167-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
