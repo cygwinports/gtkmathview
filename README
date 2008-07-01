@@ -14,17 +14,17 @@ to provide an abstraction of the platform-specific capabilities
 (available fonts, drawing drawing primitives, and so on).
 
 Runtime requirements:
-  cygwin-1.5.24-2
+  cygwin-1.5.25-15
   font-texcm-ttf-20030828-1
   gdome2-0.8.1-2
-  glib2-2.12.13-1
-  gmetadom-0.2.5-1
-  gtk2-x11-2.10.14-1
-  libpopt0-1.10.4-1
-  libxml2-2.6.29-1
-  pango-1.16.5-1
-  t1lib-5.1.1-1
-  t1lib-x11-5.1.1-1
+  glib2-2.16.3-1
+  gmetadom-0.2.6-1
+  gtk2-x11-2.12.10-1
+  libpopt0-1.14-1
+  libxml2-2.6.32-1
+  pango-1.20.3-1
+  t1lib5-5.1.2-1
+  t1libx5-5.1.2-1
 
 Build requirements:
   cygwin-1.5.24-2
@@ -49,21 +49,40 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gtkmathview-0.7.8.1167-X-src.tar.bz2
+  unpack gtkmathview-0.8.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gtkmathview-0.7.8.1167-X.cygport all
+  cygport ./gtkmathview-0.8.0-X.cygport all
 
 This will create:
-  /usr/src/gtkmathview-0.7.8.1167-X-src.tar.bz2
-  /usr/src/gtkmathview-0.7.8.1167-X.tar.bz2
+  /usr/src/gtkmathview-0.8.0-X-src.tar.bz2
+  /usr/src/gtkmathview-0.8.0-X.tar.bz2
+  /usr/src/libgtkmathview-devel-0.8.0-X.tar.bz2
+  /usr/src/libgtkmathview0-0.8.0-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary packages:
 
 (gtkmathview)
+  /usr/bin/mathmlps.exe
+  /usr/bin/mathmlsvg.exe
+  /usr/bin/mathmlviewer.exe
+  /usr/share/doc/gtkmathview-0.8.0/AUTHORS
+  /usr/share/doc/gtkmathview-0.8.0/BUGS
+  /usr/share/doc/gtkmathview-0.8.0/CONTRIBUTORS
+  /usr/share/doc/gtkmathview-0.8.0/COPYING
+  /usr/share/doc/gtkmathview-0.8.0/ChangeLog
+  /usr/share/doc/gtkmathview-0.8.0/HISTORY
+  /usr/share/doc/gtkmathview-0.8.0/INSTALL
+  /usr/share/doc/gtkmathview-0.8.0/LICENSE
+  /usr/share/doc/gtkmathview-0.8.0/NEWS
+  /usr/share/doc/gtkmathview-0.8.0/README
+  /usr/share/doc/gtkmathview-0.8.0/TODO
+  /usr/share/man/man1/mathmlviewer.1.gz
+
+(libgtkmathview0)
   /etc/gtkmathview/gtkmathview.conf.xml
   /usr/bin/cyggtkmathview_custom_reader-0.dll
   /usr/bin/cyggtkmathview_gmetadom-0.dll
@@ -77,22 +96,6 @@ Files included in the binary packages:
   /usr/bin/cygmathview_frontend_gmetadom-0.dll
   /usr/bin/cygmathview_frontend_libxml2-0.dll
   /usr/bin/cygmathview_frontend_libxml2_reader-0.dll
-  /usr/bin/mathmlps.exe
-  /usr/bin/mathmlsvg.exe
-  /usr/bin/mathmlviewer.exe
-  /usr/share/doc/Cygwin/gtkmathview-0.7.8.1167.README
-  /usr/share/doc/gtkmathview-0.7.8.1167/AUTHORS
-  /usr/share/doc/gtkmathview-0.7.8.1167/BUGS
-  /usr/share/doc/gtkmathview-0.7.8.1167/CONTRIBUTORS
-  /usr/share/doc/gtkmathview-0.7.8.1167/COPYING
-  /usr/share/doc/gtkmathview-0.7.8.1167/ChangeLog
-  /usr/share/doc/gtkmathview-0.7.8.1167/HISTORY
-  /usr/share/doc/gtkmathview-0.7.8.1167/INSTALL
-  /usr/share/doc/gtkmathview-0.7.8.1167/LICENSE
-  /usr/share/doc/gtkmathview-0.7.8.1167/MAINTAINERS
-  /usr/share/doc/gtkmathview-0.7.8.1167/NEWS
-  /usr/share/doc/gtkmathview-0.7.8.1167/README
-  /usr/share/doc/gtkmathview-0.7.8.1167/TODO
   /usr/share/gtkmathview/dictionary-combining.xml
   /usr/share/gtkmathview/dictionary-local.xml
   /usr/share/gtkmathview/dictionary.dtd
@@ -101,9 +104,8 @@ Files included in the binary packages:
   /usr/share/gtkmathview/entities-table.xml
   /usr/share/gtkmathview/gtkmathview.conf.dtd
   /usr/share/gtkmathview/mathml-entities.dtd
-  /usr/share/man/man1/mathmlviewer.1.gz
 
-(gtkmathview-devel)
+(libgtkmathview-devel)
   /usr/include/gtkmathview/MathView/AbstractLogger.hh
   /usr/include/gtkmathview/MathView/Area.hh
   /usr/include/gtkmathview/MathView/AreaFactory.hh
@@ -270,6 +272,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 0.8.0-1 -----
+Version bump.
 
 ----- version 0.7.8.1167-1 -----
 Initial release for Cygwin.
