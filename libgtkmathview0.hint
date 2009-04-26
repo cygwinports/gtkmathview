@@ -1,5 +1,5 @@
 category: Gnome Math
-requires: cygwin gdome2 glib2 gmetadom gtk2-x11 libxml2 pango t1lib5 t1libx5 font-texcm-ttf
+requires: cygwin libgcc1 libgdome0 libglib2.0_0 libgmetadom_gdome_cpp_smart0 libgtk2.0_0 libstdc++6 libpango1.0_0 libxml2 t1lib5 t1libx5 font-texcm-ttf
 external-source: gtkmathview
 sdesc: "GTK+ MathML rendering engine (runtime)"
 ldesc: "GtkMathView is a C++ rendering engine for MathML documents. It 

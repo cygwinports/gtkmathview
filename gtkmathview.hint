@@ -1,7 +1,6 @@
 category: Gnome Math
-requires: cygwin libgtkmathview0 gdome2-devel glib2-devel gmetadom-devel gtk2-x11-devel libxml2-devel pango-devel t1lib-devel t1libx-devel
-external-source: gtkmathview
-sdesc: "GTK+ MathML rendering engine (development)"
+requires: cygwin libgcc1 libgdome0 libglib2.0_0 libgmetadom_gdome_cpp_smart0 libgtk2.0_0 libgtkmathview0 libpopt0 libstdc++6 libxml2
+sdesc: "GTK+ MathML rendering engine (viewer and converters)"
 ldesc: "GtkMathView is a C++ rendering engine for MathML documents. It 
 provides an interactive view that can be used for browsing and editing 
 MathML markup.

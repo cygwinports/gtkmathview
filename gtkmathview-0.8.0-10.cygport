@@ -6,23 +6,19 @@ SRC_URI="http://helm.cs.unibo.it/mml-widget/sources/${P}.tar.gz"
 PATCH_URI="
 	mirror://portage/x11-libs/${PN}/files/${P}-gcc43.patch
 	mirror://portage/x11-libs/${PN}/files/${P}-cond-t1.patch
+	0.8.0-binreloc.patch
+	0.8.0-exeext.patch
+	0.8.0-no-undefined.patch
+	0.8.0-pango-shaper.patch
 "
 
-abi=0
-PKG_NAMES="${PN} lib${PN}${abi} lib${PN}-devel"
-PKG_HINTS="setup lib devel"
-PKG_CONTENTS[0]="usr/bin/*.exe usr/share/doc/ usr/share/man/"
-PKG_CONTENTS[1]="etc/${PN} usr/bin/*-${abi}.dll usr/share/${PN}"
-PKG_CONTENTS[2]="usr/include/ usr/lib/"
+PKG_NAMES="${PN} lib${PN}0 lib${PN}-devel"
+gtkmathview_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
+libgtkmathview0_CONTENTS="etc/${PN} usr/bin/*-0.dll usr/share/${PN}"
+libgtkmathview_devel_CONTENTS="usr/include/ usr/lib/"
 
-CYGPORT_USE_UNSTABLE_API=1
-src_unpack_hook() {
-	rm -f auto/{Char.hh,Char.hh.in,config.dirs,entitiesTable.inc}
-	rm -f config/${PN}.conf.xml
-}
-
-# viewer/aux.cc
-USE_MANAGED_MOUNT=1
+DISTCLEANFILES="auto/Char.hh auto/Char.hh.in auto/config.dirs
+                auto/entitiesTable.inc config/gtkmathview.conf.xml"
 
 CYGCONF_ARGS="
 	--enable-boxml

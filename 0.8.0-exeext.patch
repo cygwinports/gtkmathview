@@ -1,0 +1,11 @@
+--- origsrc/gtkmathview-0.8.0/auto/Makefile.am	2007-10-15 03:55:33.000000000 -0500
++++ src/gtkmathview-0.8.0/auto/Makefile.am	2008-07-01 14:13:38.140625000 -0500
+@@ -5,7 +5,7 @@
+ if COND_GMETADOM
+ noinst_PROGRAMS += dumpEntitiesTable
+ 
+-entitiesTable.inc: $(CONFIGDIR)/entities-table.xml dumpEntitiesTable
++entitiesTable.inc: $(CONFIGDIR)/entities-table.xml dumpEntitiesTable$(EXEEXT)
+ 	./dumpEntitiesTable $< >$@
+ 
+ else

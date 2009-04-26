@@ -1,0 +1,11 @@
+--- origsrc/gtkmathview-0.8.0/configure.ac	2007-10-15 02:04:20.000000000 -0500
++++ src/gtkmathview-0.8.0/configure.ac	2009-04-26 13:30:14.529913200 -0500
+@@ -452,7 +452,7 @@ if test "$enable_ps" = "yes"; then
+ fi
+ AM_CONDITIONAL([COND_PS], [test "$enable_ps" = "yes"])
+ 
+-AM_BINRELOC
++dnl AM_BINRELOC
+ AM_CONDITIONAL(WITH_BINRELOC, test "x$br_cv_binreloc" = "xyes")
+ 
+ AC_MSG_CHECKING([whether to use GCC precompiled headers with $CXX])

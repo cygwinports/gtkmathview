@@ -1,0 +1,11 @@
+--- origsrc/gtkmathview-0.8.0/config/gtkmathview.conf.xml.in	2007-08-17 05:02:47.000000000 -0500
++++ src/gtkmathview-0.8.0/config/gtkmathview.conf.xml.in	2008-07-01 12:23:11.000000000 -0500
+@@ -87,7 +87,7 @@
+       <key name="priority">1</key>
+     </section>
+     <section name="pango-computer-modern-shaper">
+-      <key name="enabled">false</key>
++      <key name="enabled">true</key>
+       <key name="priority">1</key>
+       <key name="post-shaping">always</key>
+     </section>
