@@ -1,10 +1,22 @@
 inherit gnome2
 
-DESCRIPTION="GTK+ MathML widget"
+NAME="gtkmathview"
+VERSION=0.8.0
+RELEASE=11
+CATEGORY="GNOME Math"
+SUMMARY="GTK+ MathML rendering engine"
+DESCRIPTION="GtkMathView is a C++ rendering engine for MathML documents. It
+provides an interactive view that can be used for browsing and editing MathML
+markup. GtkMathView reads MathML documents by means of a frontend whose purpose
+is to traverse the MathML document (or part of it) and to appropriately
+instantiate GtkMathView's internal data structures that are suitable for
+rendering it."
 HOMEPAGE="http://helm.cs.unibo.it/mml-widget/"
 SRC_URI="http://helm.cs.unibo.it/mml-widget/sources/${P}.tar.gz"
 PATCH_URI="
 	mirror://portage/x11-libs/${PN}/files/${P}-gcc43.patch
+	mirror://portage/x11-libs/${PN}/files/${P}-gcc44.patch
+	mirror://portage/x11-libs/${PN}/files/${P}-gcc47.patch
 	mirror://portage/x11-libs/${PN}/files/${P}-cond-t1.patch
 	0.8.0-binreloc.patch
 	0.8.0-exeext.patch
@@ -14,7 +26,7 @@ PATCH_URI="
 
 PKG_NAMES="${PN} lib${PN}0 lib${PN}-devel"
 gtkmathview_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
-libgtkmathview0_CONTENTS="etc/${PN} usr/bin/*-0.dll usr/share/${PN}"
+libgtkmathview0_CONTENTS="etc/${NAME}/ usr/bin/*-0.dll usr/share/${NAME}/"
 libgtkmathview_devel_CONTENTS="usr/include/ usr/lib/"
 
 DISTCLEANFILES="auto/Char.hh auto/Char.hh.in auto/config.dirs
@@ -24,7 +36,7 @@ CYGCONF_ARGS="
 	--enable-boxml
 	--enable-breaks
 	--enable-builder-cache
-	--enable-gmetadom
+	--disable-gmetadom
 	--enable-gtk
 	--enable-libxml2
 	--enable-libxml2-reader
