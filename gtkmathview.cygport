@@ -2,8 +2,8 @@ inherit gnome2
 
 NAME="gtkmathview"
 VERSION=0.8.0
-RELEASE=11
-CATEGORY="GNOME Math"
+RELEASE=12
+CATEGORY="Libs"
 SUMMARY="GTK+ MathML rendering engine"
 DESCRIPTION="GtkMathView is a C++ rendering engine for MathML documents. It
 provides an interactive view that can be used for browsing and editing MathML
@@ -12,22 +12,30 @@ is to traverse the MathML document (or part of it) and to appropriately
 instantiate GtkMathView's internal data structures that are suitable for
 rendering it."
 HOMEPAGE="http://helm.cs.unibo.it/mml-widget/"
-SRC_URI="http://helm.cs.unibo.it/mml-widget/sources/${P}.tar.gz"
+SRC_URI="http://helm.cs.unibo.it/mml-widget/sources/${NAME}-${VERSION}.tar.gz"
 PATCH_URI="
-	mirror://portage/x11-libs/${PN}/files/${P}-gcc43.patch
-	mirror://portage/x11-libs/${PN}/files/${P}-gcc44.patch
-	mirror://portage/x11-libs/${PN}/files/${P}-gcc47.patch
-	mirror://portage/x11-libs/${PN}/files/${P}-cond-t1.patch
+	http://pkgs.fedoraproject.org/cgit/gtkmathview.git/plain/gtkmathview-0.8.0-gcc43.patch
+	http://pkgs.fedoraproject.org/cgit/gtkmathview.git/plain/gtkmathview-0.8.0-includes.patch
+	http://pkgs.fedoraproject.org/cgit/gtkmathview.git/plain/gtkmathview-marshalling-functions-git7d938a.patch
+	http://pkgs.fedoraproject.org/cgit/gtkmathview.git/plain/gtkmathview-gcc-fixes-git3918e8.patch
+	http://pkgs.fedoraproject.org/cgit/gtkmathview.git/plain/gtkmathview-fix-ComputerModernShaper-git210206.patch
+	http://pkgs.fedoraproject.org/cgit/gtkmathview.git/plain/gtkmathview-lowercasegreek-gitb03152.patch
+	http://pkgs.fedoraproject.org/cgit/gtkmathview.git/plain/gtkmathview-0.8.0-gcc47.patch
 	0.8.0-binreloc.patch
 	0.8.0-exeext.patch
 	0.8.0-no-undefined.patch
 	0.8.0-pango-shaper.patch
 "
 
-PKG_NAMES="${PN} lib${PN}0 lib${PN}-devel"
+PKG_NAMES="${NAME} lib${NAME}0 lib${NAME}-common lib${NAME}-devel libmathview0 libmathview-devel"
 gtkmathview_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
-libgtkmathview0_CONTENTS="etc/${NAME}/ usr/bin/*-0.dll usr/share/${NAME}/"
-libgtkmathview_devel_CONTENTS="usr/include/ usr/lib/"
+libgtkmathview0_REQUIRES="libgtkmathview-common"
+libgtkmathview0_CONTENTS="usr/bin/*gtk*-0.dll"
+libgtkmathview_common_CONTENTS="etc/${NAME}/ usr/share/${NAME}/"
+libgtkmathview_devel_CONTENTS="usr/include/gtkmathview/gtk/ usr/lib/lib*gtk* usr/lib/pkgconfig/*gtk*"
+libmathview0_REQUIRES="libgtkmathview-common"
+libmathview0_CONTENTS="--exclude=*gtk* usr/bin/*-0.dll"
+libmathview_devel_CONTENTS="--exclude=lib*gtk* usr/include/gtkmathview/MathView/ usr/lib/"
 
 DISTCLEANFILES="auto/Char.hh auto/Char.hh.in auto/config.dirs
                 auto/entitiesTable.inc config/gtkmathview.conf.xml"
